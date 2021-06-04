@@ -6,6 +6,7 @@ A [gomock](https://github.com/golang/mock) implementation of the [shopify](https
 
 - [Github authentication](#github-authentication)
 - [Installation](#installation)
+- [Usage](#usage)
 - [Docker](#docker)
 - [How to contribute](#how-to-contribute)
 
@@ -32,6 +33,25 @@ Install the module using
 
 ```sh
 go get -u github.com/MOHC-LTD/mockshopify
+```
+
+## Usage
+
+Each implementing repository on the shop is exported, this allows you to expect calls to the shop in your tests.
+
+```go
+func TestSomething(t *testing.T) {
+    mockCtrl := gomock.NewController(t)
+    defer mockCtrl.Finish()
+
+    mockShop := mockshopify.NewShop(mockCtrl)
+
+    service := NewService(mockShop)
+
+    mockShop.OrderRepository.EXPECT().GET(10).Return(shopify.Order{}, nil)
+
+    service.Get(10)
+}
 ```
 
 ## Docker
