@@ -11,6 +11,7 @@ type Shop struct {
 	OrderRepository            *MockOrderRepository
 	FulfillmentRepository      *MockFulfillmentRepository
 	FulfillmentEventRepository *MockFulfillmentEventRepository
+	VariantRepository          *MockVariantRepository
 }
 
 // NewShop builds a gomock implementation of a shopify shop.
@@ -26,6 +27,7 @@ func NewShop(ctrl *gomock.Controller) Shop {
 		OrderRepository:            NewMockOrderRepository(ctrl),
 		FulfillmentRepository:      NewMockFulfillmentRepository(ctrl),
 		FulfillmentEventRepository: NewMockFulfillmentEventRepository(ctrl),
+		VariantRepository:          NewMockVariantRepository(ctrl),
 	}
 }
 
@@ -42,4 +44,9 @@ func (shop Shop) Fulfillments() shopify.FulfillmentRepository {
 // FulfillmentEvents returns a mock implementation of a shopify fulfillment event repository
 func (shop Shop) FulfillmentEvents() shopify.FulfillmentEventRepository {
 	return shop.FulfillmentEventRepository
+}
+
+// Variants returns a mock implementation of a shopify variant repository
+func (shop Shop) Variants() shopify.VariantRepository {
+	return shop.VariantRepository
 }
