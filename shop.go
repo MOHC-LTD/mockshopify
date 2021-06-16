@@ -52,7 +52,7 @@ func (shop Shop) Variants() shopify.VariantRepository {
 	return shop.VariantRepository
 }
 
-// Variants returns a mock implementation of a shopify product repository
+// Products returns a mock implementation of a shopify product repository
 func (shop Shop) Products() shopify.ProductRepository {
 	return shop.ProductRepository
 }
