@@ -14,6 +14,8 @@ type Shop struct {
 	VariantRepository          *MockVariantRepository
 	ProductRepository          *MockProductRepository
 	InventoryLevelRepository   *MockInventoryLevelRepository
+	CollectionRepository       *MockCollectionRepository
+	ProductImageRepository     *MockProductImageRepository
 }
 
 // NewShop builds a gomock implementation of a shopify shop.
@@ -31,6 +33,8 @@ func NewShop(ctrl *gomock.Controller) Shop {
 		FulfillmentEventRepository: NewMockFulfillmentEventRepository(ctrl),
 		VariantRepository:          NewMockVariantRepository(ctrl),
 		InventoryLevelRepository:   NewMockInventoryLevelRepository(ctrl),
+		CollectionRepository:       NewMockCollectionRepository(ctrl),
+		ProductImageRepository:     NewMockProductImageRepository(ctrl),
 	}
 }
 
@@ -62,4 +66,14 @@ func (shop Shop) Products() shopify.ProductRepository {
 // InventoryLevels returns a mock implementation of a shopify inventory levels repository
 func (shop Shop) InventoryLevels() shopify.InventoryLevelRepository {
 	return shop.InventoryLevelRepository
+}
+
+// Collections returns a mock implementation of a shopify collection repository
+func (shop Shop) Collections() shopify.CollectionRepository {
+	return shop.CollectionRepository
+}
+
+// ProductImages returns a mock implementation of a shopify product image repository
+func (shop Shop) ProductImages() shopify.ProductImageRepository {
+	return shop.ProductImageRepository
 }
