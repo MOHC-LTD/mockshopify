@@ -5,51 +5,50 @@
 package mockshopify
 
 import (
-	reflect "reflect"
-
 	shopify "github.com/MOHC-LTD/shopify"
 	gomock "github.com/golang/mock/gomock"
+	reflect "reflect"
 )
 
-// MockProductRepository is a mock of ProductRepository interface
+// MockProductRepository is a mock of ProductRepository interface.
 type MockProductRepository struct {
 	ctrl     *gomock.Controller
 	recorder *MockProductRepositoryMockRecorder
 }
 
-// MockProductRepositoryMockRecorder is the mock recorder for MockProductRepository
+// MockProductRepositoryMockRecorder is the mock recorder for MockProductRepository.
 type MockProductRepositoryMockRecorder struct {
 	mock *MockProductRepository
 }
 
-// NewMockProductRepository creates a new mock instance
+// NewMockProductRepository creates a new mock instance.
 func NewMockProductRepository(ctrl *gomock.Controller) *MockProductRepository {
 	mock := &MockProductRepository{ctrl: ctrl}
 	mock.recorder = &MockProductRepositoryMockRecorder{mock}
 	return mock
 }
 
-// EXPECT returns an object that allows the caller to indicate expected use
+// EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockProductRepository) EXPECT() *MockProductRepositoryMockRecorder {
 	return m.recorder
 }
 
-// List mocks base method
-func (m *MockProductRepository) List(query shopify.ProductQuery) (shopify.Products, error) {
+// Create mocks base method.
+func (m *MockProductRepository) Create(product shopify.Product) (shopify.Product, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "List", query)
-	ret0, _ := ret[0].(shopify.Products)
+	ret := m.ctrl.Call(m, "Create", product)
+	ret0, _ := ret[0].(shopify.Product)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// List indicates an expected call of List
-func (mr *MockProductRepositoryMockRecorder) List(query interface{}) *gomock.Call {
+// Create indicates an expected call of Create.
+func (mr *MockProductRepositoryMockRecorder) Create(product interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "List", reflect.TypeOf((*MockProductRepository)(nil).List), query)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockProductRepository)(nil).Create), product)
 }
 
-// Get mocks base method
+// Get mocks base method.
 func (m *MockProductRepository) Get(id int64) (shopify.Product, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Get", id)
@@ -58,8 +57,23 @@ func (m *MockProductRepository) Get(id int64) (shopify.Product, error) {
 	return ret0, ret1
 }
 
-// Get indicates an expected call of Get
+// Get indicates an expected call of Get.
 func (mr *MockProductRepositoryMockRecorder) Get(id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockProductRepository)(nil).Get), id)
+}
+
+// List mocks base method.
+func (m *MockProductRepository) List(query shopify.ProductQuery) (shopify.Products, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "List", query)
+	ret0, _ := ret[0].(shopify.Products)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// List indicates an expected call of List.
+func (mr *MockProductRepositoryMockRecorder) List(query interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "List", reflect.TypeOf((*MockProductRepository)(nil).List), query)
 }
