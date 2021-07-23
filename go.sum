@@ -1,5 +1,5 @@
-github.com/MOHC-LTD/shopify v1.12.0 h1:EWLuH4BN6ytFDEYuNo7XVowcDomoIzG05QUKRAfUqag=
-github.com/MOHC-LTD/shopify v1.12.0/go.mod h1:ZqEEOCrFlhlQxqxzpfE9lah5uvjiGQNvcGERxaTACPQ=
+github.com/MOHC-LTD/shopify v1.13.0 h1:ja0dRpyynWuxjcZ2UZi7qITIU7eiyHuzZxk8XrekTMM=
+github.com/MOHC-LTD/shopify v1.13.0/go.mod h1:ZqEEOCrFlhlQxqxzpfE9lah5uvjiGQNvcGERxaTACPQ=
 github.com/golang/mock v1.6.0 h1:ErTB+efbowRARo13NNdxyJji2egdxLGQhRaY+DUumQc=
 github.com/golang/mock v1.6.0/go.mod h1:p6yTPP+5HYm5mzsMV8JkE6ZKdX+/wYM6Hr+LicevLPs=
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=

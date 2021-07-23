@@ -48,6 +48,21 @@ func (mr *MockOrderRepositoryMockRecorder) Close(id interface{}) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Close", reflect.TypeOf((*MockOrderRepository)(nil).Close), id)
 }
 
+// Create mocks base method.
+func (m *MockOrderRepository) Create(order shopify.Order) (shopify.Order, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Create", order)
+	ret0, _ := ret[0].(shopify.Order)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// Create indicates an expected call of Create.
+func (mr *MockOrderRepositoryMockRecorder) Create(order interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockOrderRepository)(nil).Create), order)
+}
+
 // Get mocks base method.
 func (m *MockOrderRepository) Get(id int64) (shopify.Order, error) {
 	m.ctrl.T.Helper()

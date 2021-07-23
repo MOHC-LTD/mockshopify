@@ -5,9 +5,10 @@
 package mockshopify
 
 import (
+	reflect "reflect"
+
 	shopify "github.com/MOHC-LTD/shopify"
 	gomock "github.com/golang/mock/gomock"
-	reflect "reflect"
 )
 
 // MockProductRepository is a mock of ProductRepository interface.
