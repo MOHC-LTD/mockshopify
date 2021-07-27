@@ -8,32 +8,224 @@ import (
 	shopify "github.com/MOHC-LTD/shopify"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
+	time "time"
 )
 
-// MockCollectionRepository is a mock of CollectionRepository interface
+// MockCollection is a mock of Collection interface.
+type MockCollection struct {
+	ctrl     *gomock.Controller
+	recorder *MockCollectionMockRecorder
+}
+
+// MockCollectionMockRecorder is the mock recorder for MockCollection.
+type MockCollectionMockRecorder struct {
+	mock *MockCollection
+}
+
+// NewMockCollection creates a new mock instance.
+func NewMockCollection(ctrl *gomock.Controller) *MockCollection {
+	mock := &MockCollection{ctrl: ctrl}
+	mock.recorder = &MockCollectionMockRecorder{mock}
+	return mock
+}
+
+// EXPECT returns an object that allows the caller to indicate expected use.
+func (m *MockCollection) EXPECT() *MockCollectionMockRecorder {
+	return m.recorder
+}
+
+// BodyHTML mocks base method.
+func (m *MockCollection) BodyHTML() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "BodyHTML")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// BodyHTML indicates an expected call of BodyHTML.
+func (mr *MockCollectionMockRecorder) BodyHTML() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BodyHTML", reflect.TypeOf((*MockCollection)(nil).BodyHTML))
+}
+
+// CollectionType mocks base method.
+func (m *MockCollection) CollectionType() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CollectionType")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// CollectionType indicates an expected call of CollectionType.
+func (mr *MockCollectionMockRecorder) CollectionType() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CollectionType", reflect.TypeOf((*MockCollection)(nil).CollectionType))
+}
+
+// Handle mocks base method.
+func (m *MockCollection) Handle() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Handle")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// Handle indicates an expected call of Handle.
+func (mr *MockCollectionMockRecorder) Handle() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Handle", reflect.TypeOf((*MockCollection)(nil).Handle))
+}
+
+// ID mocks base method.
+func (m *MockCollection) ID() int64 {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ID")
+	ret0, _ := ret[0].(int64)
+	return ret0
+}
+
+// ID indicates an expected call of ID.
+func (mr *MockCollectionMockRecorder) ID() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ID", reflect.TypeOf((*MockCollection)(nil).ID))
+}
+
+// Image mocks base method.
+func (m *MockCollection) Image() shopify.Image {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Image")
+	ret0, _ := ret[0].(shopify.Image)
+	return ret0
+}
+
+// Image indicates an expected call of Image.
+func (mr *MockCollectionMockRecorder) Image() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Image", reflect.TypeOf((*MockCollection)(nil).Image))
+}
+
+// ProductsCount mocks base method.
+func (m *MockCollection) ProductsCount() int {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ProductsCount")
+	ret0, _ := ret[0].(int)
+	return ret0
+}
+
+// ProductsCount indicates an expected call of ProductsCount.
+func (mr *MockCollectionMockRecorder) ProductsCount() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ProductsCount", reflect.TypeOf((*MockCollection)(nil).ProductsCount))
+}
+
+// PublishedAt mocks base method.
+func (m *MockCollection) PublishedAt() time.Time {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "PublishedAt")
+	ret0, _ := ret[0].(time.Time)
+	return ret0
+}
+
+// PublishedAt indicates an expected call of PublishedAt.
+func (mr *MockCollectionMockRecorder) PublishedAt() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PublishedAt", reflect.TypeOf((*MockCollection)(nil).PublishedAt))
+}
+
+// PublishedScope mocks base method.
+func (m *MockCollection) PublishedScope() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "PublishedScope")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// PublishedScope indicates an expected call of PublishedScope.
+func (mr *MockCollectionMockRecorder) PublishedScope() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PublishedScope", reflect.TypeOf((*MockCollection)(nil).PublishedScope))
+}
+
+// SortOrder mocks base method.
+func (m *MockCollection) SortOrder() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "SortOrder")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// SortOrder indicates an expected call of SortOrder.
+func (mr *MockCollectionMockRecorder) SortOrder() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SortOrder", reflect.TypeOf((*MockCollection)(nil).SortOrder))
+}
+
+// TemplateSuffix mocks base method.
+func (m *MockCollection) TemplateSuffix() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "TemplateSuffix")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// TemplateSuffix indicates an expected call of TemplateSuffix.
+func (mr *MockCollectionMockRecorder) TemplateSuffix() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TemplateSuffix", reflect.TypeOf((*MockCollection)(nil).TemplateSuffix))
+}
+
+// Title mocks base method.
+func (m *MockCollection) Title() string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Title")
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// Title indicates an expected call of Title.
+func (mr *MockCollectionMockRecorder) Title() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Title", reflect.TypeOf((*MockCollection)(nil).Title))
+}
+
+// UpdatedAt mocks base method.
+func (m *MockCollection) UpdatedAt() time.Time {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdatedAt")
+	ret0, _ := ret[0].(time.Time)
+	return ret0
+}
+
+// UpdatedAt indicates an expected call of UpdatedAt.
+func (mr *MockCollectionMockRecorder) UpdatedAt() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdatedAt", reflect.TypeOf((*MockCollection)(nil).UpdatedAt))
+}
+
+// MockCollectionRepository is a mock of CollectionRepository interface.
 type MockCollectionRepository struct {
 	ctrl     *gomock.Controller
 	recorder *MockCollectionRepositoryMockRecorder
 }
 
-// MockCollectionRepositoryMockRecorder is the mock recorder for MockCollectionRepository
+// MockCollectionRepositoryMockRecorder is the mock recorder for MockCollectionRepository.
 type MockCollectionRepositoryMockRecorder struct {
 	mock *MockCollectionRepository
 }
 
-// NewMockCollectionRepository creates a new mock instance
+// NewMockCollectionRepository creates a new mock instance.
 func NewMockCollectionRepository(ctrl *gomock.Controller) *MockCollectionRepository {
 	mock := &MockCollectionRepository{ctrl: ctrl}
 	mock.recorder = &MockCollectionRepositoryMockRecorder{mock}
 	return mock
 }
 
-// EXPECT returns an object that allows the caller to indicate expected use
+// EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockCollectionRepository) EXPECT() *MockCollectionRepositoryMockRecorder {
 	return m.recorder
 }
 
-// Get mocks base method
+// Get mocks base method.
 func (m *MockCollectionRepository) Get(id int64) (shopify.Collection, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Get", id)
@@ -42,13 +234,13 @@ func (m *MockCollectionRepository) Get(id int64) (shopify.Collection, error) {
 	return ret0, ret1
 }
 
-// Get indicates an expected call of Get
+// Get indicates an expected call of Get.
 func (mr *MockCollectionRepositoryMockRecorder) Get(id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockCollectionRepository)(nil).Get), id)
 }
 
-// Products mocks base method
+// Products mocks base method.
 func (m *MockCollectionRepository) Products(id int64) (shopify.Products, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Products", id)
@@ -57,7 +249,7 @@ func (m *MockCollectionRepository) Products(id int64) (shopify.Products, error) 
 	return ret0, ret1
 }
 
-// Products indicates an expected call of Products
+// Products indicates an expected call of Products.
 func (mr *MockCollectionRepositoryMockRecorder) Products(id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Products", reflect.TypeOf((*MockCollectionRepository)(nil).Products), id)
