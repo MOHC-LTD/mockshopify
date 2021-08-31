@@ -32,6 +32,7 @@ func NewShop(ctrl *gomock.Controller) Shop {
 		FulfillmentRepository:      NewMockFulfillmentRepository(ctrl),
 		FulfillmentEventRepository: NewMockFulfillmentEventRepository(ctrl),
 		VariantRepository:          NewMockVariantRepository(ctrl),
+		ProductRepository:          NewMockProductRepository(ctrl),
 		InventoryLevelRepository:   NewMockInventoryLevelRepository(ctrl),
 		CollectionRepository:       NewMockCollectionRepository(ctrl),
 		ProductImageRepository:     NewMockProductImageRepository(ctrl),
