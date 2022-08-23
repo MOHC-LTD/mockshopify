@@ -16,7 +16,7 @@ type Shop struct {
 	InventoryLevelRepository   *MockInventoryLevelRepository
 	CollectionRepository       *MockCollectionRepository
 	ProductImageRepository     *MockProductImageRepository
-	MetafieldRepository        *MockMetaFieldRepository
+	MetafieldRepository        *MockMetafieldRepository
 }
 
 // NewShop builds a gomock implementation of a shopify shop.
@@ -37,7 +37,7 @@ func NewShop(ctrl *gomock.Controller) Shop {
 		InventoryLevelRepository:   NewMockInventoryLevelRepository(ctrl),
 		CollectionRepository:       NewMockCollectionRepository(ctrl),
 		ProductImageRepository:     NewMockProductImageRepository(ctrl),
-		MetafieldRepository:        NewMockMetaFieldRepository(ctrl),
+		MetafieldRepository:        NewMockMetafieldRepository(ctrl),
 	}
 }
 
