@@ -34,6 +34,21 @@ func (m *MockVariantRepository) EXPECT() *MockVariantRepositoryMockRecorder {
 	return m.recorder
 }
 
+// Create mocks base method.
+func (m *MockVariantRepository) Create(productID int64, variant shopify.Variant) (shopify.Variant, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Create", productID, variant)
+	ret0, _ := ret[0].(shopify.Variant)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// Create indicates an expected call of Create.
+func (mr *MockVariantRepositoryMockRecorder) Create(productID, variant interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockVariantRepository)(nil).Create), productID, variant)
+}
+
 // Get mocks base method.
 func (m *MockVariantRepository) Get(id int64) (shopify.Variant, error) {
 	m.ctrl.T.Helper()
