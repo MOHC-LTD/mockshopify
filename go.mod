@@ -1,8 +1,8 @@
-module github.com/MOHC-LTD/mockshopify
+module github.com/MOHC-LTD/mockshopify/v2
 
 go 1.16
 
 require (
-	github.com/MOHC-LTD/shopify v1.36.0
+	github.com/MOHC-LTD/shopify/v2 v2.0.0
 	github.com/golang/mock v1.6.0
 )
