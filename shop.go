@@ -1,7 +1,7 @@
 package mockshopify
 
 import (
-	"github.com/MOHC-LTD/shopify"
+	"github.com/MOHC-LTD/shopify/v2"
 
 	gomock "github.com/golang/mock/gomock"
 )

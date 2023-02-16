@@ -1,5 +1,5 @@
-github.com/MOHC-LTD/shopify v1.36.0 h1:SHqdnpl6THykj4Wc08wgEpflJMhHrTO17bClWkkhaS8=
-github.com/MOHC-LTD/shopify v1.36.0/go.mod h1:3+7WdQJy9OI9GSa2vbh+WM4QHJDohehOfZYpOSbUgyg=
+github.com/MOHC-LTD/shopify/v2 v2.0.0 h1:MKNXnMWGbhEDmwZwLhkd2x1erAq5/ycY2BYQi6NaUa0=
+github.com/MOHC-LTD/shopify/v2 v2.0.0/go.mod h1:NH8yvZX6NgRexC38va3jNswUcRkvpea+E7ploSSoty0=
 github.com/golang/mock v1.6.0 h1:ErTB+efbowRARo13NNdxyJji2egdxLGQhRaY+DUumQc=
 github.com/golang/mock v1.6.0/go.mod h1:p6yTPP+5HYm5mzsMV8JkE6ZKdX+/wYM6Hr+LicevLPs=
 github.com/jaswdr/faker v1.15.0 h1:wcEVaPKFE53NvdT4fl+w3b0IXdefp1Yk0BdBs0APCoA=

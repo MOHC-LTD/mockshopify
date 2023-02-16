@@ -7,7 +7,7 @@ import (
 	context "context"
 	reflect "reflect"
 
-	shopify "github.com/MOHC-LTD/shopify"
+	shopify "github.com/MOHC-LTD/shopify/v2"
 	gomock "github.com/golang/mock/gomock"
 )
 
