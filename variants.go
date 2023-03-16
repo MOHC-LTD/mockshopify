@@ -49,6 +49,20 @@ func (mr *MockVariantRepositoryMockRecorder) Create(productID, variant interface
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockVariantRepository)(nil).Create), productID, variant)
 }
 
+// Delete mocks base method.
+func (m *MockVariantRepository) Delete(productID, variantID int64) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Delete", productID, variantID)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// Delete indicates an expected call of Delete.
+func (mr *MockVariantRepositoryMockRecorder) Delete(productID, variantID interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockVariantRepository)(nil).Delete), productID, variantID)
+}
+
 // Get mocks base method.
 func (m *MockVariantRepository) Get(id int64) (shopify.Variant, error) {
 	m.ctrl.T.Helper()
