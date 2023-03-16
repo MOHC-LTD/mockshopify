@@ -63,6 +63,21 @@ func (mr *MockCustomerAddressRepositoryMockRecorder) Delete(id, addressID interf
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockCustomerAddressRepository)(nil).Delete), id, addressID)
 }
 
+// SetDefault mocks base method.
+func (m *MockCustomerAddressRepository) SetDefault(id, addressID int64) (shopify.CustomerAddress, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "SetDefault", id, addressID)
+	ret0, _ := ret[0].(shopify.CustomerAddress)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// SetDefault indicates an expected call of SetDefault.
+func (mr *MockCustomerAddressRepositoryMockRecorder) SetDefault(id, addressID interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetDefault", reflect.TypeOf((*MockCustomerAddressRepository)(nil).SetDefault), id, addressID)
+}
+
 // Update mocks base method.
 func (m *MockCustomerAddressRepository) Update(id int64, address shopify.CustomerAddress) (shopify.CustomerAddress, error) {
 	m.ctrl.T.Helper()
