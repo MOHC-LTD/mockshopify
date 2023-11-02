@@ -8,6 +8,8 @@ import (
 
 // Shop is a gomock shopify shop
 type Shop struct {
+	CustomerRepository         *MockCustomerRepository
+	CustomerAddressRepository  *MockCustomerAddressRepository
 	OrderRepository            *MockOrderRepository
 	FulfillmentRepository      *MockFulfillmentRepository
 	FulfillmentEventRepository *MockFulfillmentEventRepository
@@ -30,6 +32,8 @@ type Shop struct {
 */
 func NewShop(ctrl *gomock.Controller) Shop {
 	return Shop{
+		CustomerRepository:         NewMockCustomerRepository(ctrl),
+		CustomerAddressRepository:  NewMockCustomerAddressRepository(ctrl),
 		OrderRepository:            NewMockOrderRepository(ctrl),
 		FulfillmentRepository:      NewMockFulfillmentRepository(ctrl),
 		FulfillmentEventRepository: NewMockFulfillmentEventRepository(ctrl),
@@ -41,6 +45,16 @@ func NewShop(ctrl *gomock.Controller) Shop {
 		ProductImageRepository:     NewMockProductImageRepository(ctrl),
 		MetafieldRepository:        NewMockMetafieldRepository(ctrl),
 	}
+}
+
+// Customers returns a mock implementation of a shopify customer repository
+func (shop Shop) Customers() shopify.CustomerRepository {
+	return shop.CustomerRepository
+}
+
+// CustomerAddresses returns an HTTP implementation of a Shopify customer addresses repository
+func (shop Shop) CustomerAddresses() shopify.CustomerAddressRepository {
+	return shop.CustomerAddressRepository
 }
 
 // Orders returns a mock implementation of a shopify order repository
