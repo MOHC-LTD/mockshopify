@@ -23,6 +23,7 @@ type Shop struct {
 	MetafieldRepository        *MockMetafieldRepository
 	BlogRepository             *MockBlogRepository
 	ArticleRepository          *MockArticleRepository
+	WebhookRepository          *MockWebhookRepository
 }
 
 // NewShop builds a gomock implementation of a shopify shop.
@@ -50,6 +51,7 @@ func NewShop(ctrl *gomock.Controller) Shop {
 		MetafieldRepository:        NewMockMetafieldRepository(ctrl),
 		BlogRepository:             NewMockBlogRepository(ctrl),
 		ArticleRepository:          NewMockArticleRepository(ctrl),
+		WebhookRepository:          NewMockWebhookRepository(ctrl),
 	}
 }
 
@@ -126,4 +128,9 @@ func (shop Shop) Blogs() shopify.BlogRepository {
 // Articles returns a mock implementation of a shopify article repository
 func (shop Shop) Articles() shopify.ArticleRepository {
 	return shop.ArticleRepository
+}
+
+// Webhooks returns a mock implementation of a shopify webhook repository
+func (shop Shop) Webhooks() shopify.WebhookRepository {
+	return shop.WebhookRepository
 }

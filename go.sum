@@ -1,3 +1,5 @@
+github.com/MOHC-LTD/shopify/v2 v2.4.3-0.20240202144507-138f9ad8ea6c h1:GWz8b6scnAc8obPaKux/+r6U1N43c4emXUseOdfyywQ=
+github.com/MOHC-LTD/shopify/v2 v2.4.3-0.20240202144507-138f9ad8ea6c/go.mod h1:MhQ3mgyn2tGMGsQw1qDFIFRX669wFXXuwmKfqtz4DbI=
 github.com/MOHC-LTD/shopify/v2 v2.4.4 h1:63rNVFGmdAl5e1eIjb+jH1DMUbO2z7klwHZ2HYc7PrA=
 github.com/MOHC-LTD/shopify/v2 v2.4.4/go.mod h1:MhQ3mgyn2tGMGsQw1qDFIFRX669wFXXuwmKfqtz4DbI=
 github.com/golang/mock v1.6.0 h1:ErTB+efbowRARo13NNdxyJji2egdxLGQhRaY+DUumQc=
