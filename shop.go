@@ -17,11 +17,13 @@ type Shop struct {
 	VariantRepository          *MockVariantRepository
 	ProductRepository          *MockProductRepository
 	InventoryLevelRepository   *MockInventoryLevelRepository
+	InventoryItemRepository    *MockInventoryItemRepository
 	CollectionRepository       *MockCollectionRepository
 	ProductImageRepository     *MockProductImageRepository
 	MetafieldRepository        *MockMetafieldRepository
 	BlogRepository             *MockBlogRepository
 	ArticleRepository          *MockArticleRepository
+	WebhookRepository          *MockWebhookRepository
 }
 
 // NewShop builds a gomock implementation of a shopify shop.
@@ -43,11 +45,13 @@ func NewShop(ctrl *gomock.Controller) Shop {
 		VariantRepository:          NewMockVariantRepository(ctrl),
 		ProductRepository:          NewMockProductRepository(ctrl),
 		InventoryLevelRepository:   NewMockInventoryLevelRepository(ctrl),
+		InventoryItemRepository:    NewMockInventoryItemRepository(ctrl),
 		CollectionRepository:       NewMockCollectionRepository(ctrl),
 		ProductImageRepository:     NewMockProductImageRepository(ctrl),
 		MetafieldRepository:        NewMockMetafieldRepository(ctrl),
 		BlogRepository:             NewMockBlogRepository(ctrl),
 		ArticleRepository:          NewMockArticleRepository(ctrl),
+		WebhookRepository:          NewMockWebhookRepository(ctrl),
 	}
 }
 
@@ -96,6 +100,11 @@ func (shop Shop) InventoryLevels() shopify.InventoryLevelRepository {
 	return shop.InventoryLevelRepository
 }
 
+// InventoryItems returns a mock implementation of a shopify inventory items repository
+func (shop Shop) InventoryItems() shopify.InventoryItemRepository {
+	return shop.InventoryItemRepository
+}
+
 // Collections returns a mock implementation of a shopify collection repository
 func (shop Shop) Collections() shopify.CollectionRepository {
 	return shop.CollectionRepository
@@ -119,4 +128,9 @@ func (shop Shop) Blogs() shopify.BlogRepository {
 // Articles returns a mock implementation of a shopify article repository
 func (shop Shop) Articles() shopify.ArticleRepository {
 	return shop.ArticleRepository
+}
+
+// Webhooks returns a mock implementation of a shopify webhook repository
+func (shop Shop) Webhooks() shopify.WebhookRepository {
+	return shop.WebhookRepository
 }
